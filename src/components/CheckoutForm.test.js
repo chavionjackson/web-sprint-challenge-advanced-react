@@ -12,7 +12,7 @@ test("renders without errors", () => {
 
 test("shows success message on submit with form details", () => {
   render(<CheckoutForm />);
-    //Arrange
+  //Arrange
   const firstNameInput = screen.queryByLabelText(/First Name/);
   const lastNameInput = screen.queryByLabelText(/Last Name/);
   const addressInput = screen.queryByLabelText(/Address/);
@@ -20,7 +20,7 @@ test("shows success message on submit with form details", () => {
   const stateInput = screen.queryByLabelText(/State/);
   const zipInput = screen.queryByLabelText(/Zip/);
   const submit = screen.queryByRole("button");
-    //Act
+  //Act
   userEvent.type(firstNameInput, "Chevy");
   userEvent.type(lastNameInput, "Jackson");
   userEvent.type(addressInput, "6830 Unicorn lane");
@@ -30,6 +30,6 @@ test("shows success message on submit with form details", () => {
   userEvent.click(submit);
 
   const success = screen.queryByTestId(/successMessage/);
-    //Assert
+  //Assert
   expect(success).toBeInTheDocument();
 });
